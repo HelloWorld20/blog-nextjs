@@ -1,4 +1,4 @@
-// import Avatar from './avatar'
+import Script from 'next/script'
 import DateFormatter from './date-formatter'
 import CoverImage from './cover-image'
 import Link from 'next/link'
@@ -36,6 +36,7 @@ const PostPreview = ({
       </div>
       <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
       {/* <Avatar name={author.name} picture={author.picture} /> */}
+      <Script src={require('./test')} onLoad={() => console.log('script onload')} />
     </div>
   )
 }

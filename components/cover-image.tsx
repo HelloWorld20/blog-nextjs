@@ -1,5 +1,8 @@
 import cn from 'classnames'
 import Link from 'next/link'
+import Image from 'next/image'
+
+import getRandomCover from '../helpers/cover'
 
 type Props = {
   title: string
@@ -8,9 +11,10 @@ type Props = {
 }
 
 const CoverImage = ({ title, src, slug }: Props) => {
+  const coverImage = getRandomCover();
   const image = (
-    <img
-      src={src}
+    <Image
+      src={coverImage}
       alt={`Cover Image for ${title}`}
       className={cn('shadow-sm', {
         'hover:shadow-lg transition-shadow duration-200': slug,
