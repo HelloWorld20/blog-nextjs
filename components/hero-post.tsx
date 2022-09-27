@@ -4,7 +4,8 @@ import CoverImage from './cover-image'
 import Link from 'next/link'
 import type Author from '../interfaces/author'
 import Hitokoto from './hitokoto'
-
+import { useDispatch } from 'react-redux'
+import { toggleFullPage } from '../store/actions'
 type Props = {
   title: string
   coverImage: string
@@ -21,6 +22,7 @@ const HeroPost = ({
   excerpt,
   slug,
 }: Props) => {
+  const dispatch = useDispatch();
   return (
     <section>
       <div className='absolute top-10 right-10 z-10 text-xs'>
@@ -37,7 +39,9 @@ const HeroPost = ({
           <div className='absolute right-10 bg-gray-50 p-1.5 rounded-sm cursor-pointer hover:bg-gray-100'>
             <i className='iconfont icon-search' style={{ lineHeight: '22px' }}></i>
           </div>
-          <div className='absolute right-0 bg-gray-50 p-1.5 rounded-sm cursor-pointer hover:bg-gray-100'>
+          <div className='absolute right-0 bg-gray-50 p-1.5 rounded-sm cursor-pointer hover:bg-gray-100' onClick={() => {
+            dispatch(toggleFullPage(true))
+          }}>
             <i className='iconfont icon-close' style={{ lineHeight: '22px' }}></i>
           </div>
         </div>

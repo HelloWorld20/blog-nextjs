@@ -1,6 +1,7 @@
 import Alert from './alert'
 import Footer from './footer'
 import Meta from './meta'
+import { useSelector } from 'react-redux'
 
 type Props = {
   preview?: boolean
@@ -8,15 +9,17 @@ type Props = {
 }
 
 const Layout = ({ preview, children }: Props) => {
+  const { fullpage } = useSelector<StoreState, appModel>(state => state.app)
+
   return (
-    <>
+    <div className={fullpage && 'w-screen h-screen overflow-hidden'}>
       <Meta />
       <div className="min-h-screen">
         {preview && <Alert />}
         <main>{children}</main>
       </div>
       <Footer />
-    </>
+    </div>
   )
 }
 
