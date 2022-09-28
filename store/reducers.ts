@@ -34,18 +34,16 @@ import * as types from './types'
 //   }
 // }
 
-interface TypeInitialAppState {
-  fullpage: boolean;
+
+
+const initialAppState: appModel = {
+  navEdpended: false
 }
 
-const initialAppState: TypeInitialAppState = {
-  fullpage: false
-}
-
-const appReducer = (state = initialAppState, { type, payload }): TypeInitialAppState => {
+const appReducer = (state = initialAppState, { type, payload }): appModel => {
   switch (type) {
-    case types.TOGGLE_FULLPAGE:
-      return { ...state, fullpage: payload }
+    case types.TOGGLE_NAV:
+      return { ...state, navEdpended: payload }
     default:
       return state
   }

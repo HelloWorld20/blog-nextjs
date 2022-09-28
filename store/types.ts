@@ -4,4 +4,4 @@
 // export const DECREMENT = 'DECREMENT'
 // export const RESET = 'RESET'
 
-export const TOGGLE_FULLPAGE = 'TOGGLE_FULLPAGE'
+export const TOGGLE_NAV = 'TOGGLE_NAV'
