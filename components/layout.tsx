@@ -9,10 +9,10 @@ type Props = {
 }
 
 const Layout = ({ preview, children }: Props) => {
-  const { fullpage } = useSelector<StoreState, appModel>(state => state.app)
+  const { navEdpended } = useSelector<StoreState, appModel>(state => state.app)
 
   return (
-    <div className={fullpage && 'w-screen h-screen overflow-hidden'}>
+    <div className={navEdpended ? 'w-screen h-screen overflow-hidden' : ""}>
       <Meta />
       <div className="min-h-screen">
         {preview && <Alert />}

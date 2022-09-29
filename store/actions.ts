@@ -1,6 +1,6 @@
 import * as types from './types'
 
-export const toggleFullPage = (payload: boolean) => ({ type: types.TOGGLE_FULLPAGE, payload })
+export const toggleNav = (payload: boolean) => ({ type: types.TOGGLE_NAV, payload })
 
 // // INITIALIZES CLOCK ON SERVER
 // export const serverRenderClock = () => (dispatch) =>

@@ -1,5 +1,5 @@
 interface appModel {
-  fullpage: boolean;
+  navEdpended: boolean;
 }
 
 interface StoreState {
