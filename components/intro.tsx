@@ -1,4 +1,3 @@
-// import { CMS_NAME } from '../lib/constants'
 
 // TODO: 应该删掉，然后用HeroPost作为头
 const Intro = () => {

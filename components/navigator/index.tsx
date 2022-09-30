@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux'
-import { toggleNav } from '../../store/actions'
+import { toggleNav } from '@/store/actions'
 import Hitokoto from '../hitokoto'
 
 export default function Navigator() {

@@ -31,8 +31,13 @@ export default function Hitokoto() {
       backSpeed: 40,
       sentencePause: false
     }
-        
-    new EasyTyper(obj, `${data.hitokoto} ——  By ${data.from}`, null, onChange)
+    const typer = new EasyTyper(obj, `${data.hitokoto} ——  By ${data.from}`, () => {
+      typer.close();
+    }, onChange)
+
+    return () => {
+      typer.close();
+    }
 
   }, [data]);
 

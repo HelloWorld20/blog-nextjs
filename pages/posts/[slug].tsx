@@ -1,19 +1,19 @@
 import { useRouter } from "next/router";
 import ErrorPage from "next/error";
-import Container from "../../components/container";
-import PostBody from "../../components/post-body";
-// import Header from '../../components/header'
-import PostHeader from "../../components/post-header";
-import Layout from "../../components/layout";
-import { getPostBySlug, getAllPosts } from "../../lib/api";
-import PostTitle from "../../components/post-title";
+import Container from "@/components/container";
+import PostBody from "@/components/post-body";
+// import Header from '@/components/header'
+import PostHeader from "@/components/post-header";
+import Layout from "@/components/layout";
+import { GALLERY_ITEM_CLASS } from '@/lib/constants'
+import { getPostBySlug, getAllPosts } from "@/lib/api";
+import PostTitle from "@/components/post-title";
 import Head from "next/head";
-import markdownToHtml from "../../lib/markdownToHtml";
-import type PostType from "../../interfaces/post";
-import useHightLight from "../../hooks/use-hightlight";
-import { useEffect } from "react";
+import markdownToHtml from "@/lib/markdownToHtml";
+import type PostType from "@/interfaces/post";
+import useHightLight from "@/hooks/use-hightlight";
 
-import lightGallery from 'lightgallery';
+import LightGallery from 'lightgallery/react';
 
 // Plugins
 import lgThumbnail from 'lightgallery/plugins/thumbnail'
@@ -34,20 +34,13 @@ export default function Post({ post, morePosts, preview }: Props) {
   const router = useRouter();
   useHightLight();
 
-  useEffect(() => {
-    lightGallery(document.getElementById('my-gallery'), {
-      selector: '.lightgallary-item',
-      speed: 500,
-      plugins: [lgZoom, lgThumbnail]
-    })
-  }, []);
-
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;
   }
   return (
     <Layout preview={preview}>
-      <div id="my-gallery">
+      {/* <div id="my-gallery"> */}
+      <LightGallery speed={500} plugins={[lgThumbnail, lgZoom]} selector={`.${GALLERY_ITEM_CLASS}`}>
         <Container>
           {/* <Header /> */}
           {router.isFallback ? (
@@ -70,7 +63,9 @@ export default function Post({ post, morePosts, preview }: Props) {
             </>
           )}
         </Container>
-      </div>
+      </LightGallery>
+
+      {/* </div> */}
     </Layout>
   );
 }

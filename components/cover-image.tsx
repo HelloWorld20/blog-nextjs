@@ -2,7 +2,7 @@ import cn from 'classnames'
 import Link from 'next/link'
 import Image from 'next/image'
 
-import getRandomCover from '../helpers/cover-images/cover'
+import getRandomCover from '@/helpers/cover-images/cover'
 
 type Props = {
   title: string
