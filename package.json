@@ -9,15 +9,14 @@
     "demo": "node ./scripts/sharp"
   },
   "dependencies": {
-    "@types/photoswipe": "^4.1.2",
     "classnames": "^2.3.1",
     "dayjs": "^1.11.5",
     "easy-typer-js": "^2.1.0",
     "gray-matter": "^4.0.3",
     "highlight.js": "^11.6.0",
+    "lightgallery": "^2.6.1",
     "next": "latest",
     "next-transpile-modules": "^9.0.0",
-    "photoswipe": "^5.3.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^7.1.0",

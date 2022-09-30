@@ -11,9 +11,18 @@ import Head from "next/head";
 import markdownToHtml from "../../lib/markdownToHtml";
 import type PostType from "../../interfaces/post";
 import useHightLight from "../../hooks/use-hightlight";
-import PhotoSwipeLightbox from "photoswipe/lightbox";
-import "photoswipe/style.css";
 import { useEffect } from "react";
+
+import lightGallery from 'lightgallery';
+
+// Plugins
+import lgThumbnail from 'lightgallery/plugins/thumbnail'
+import lgZoom from 'lightgallery/plugins/zoom'
+
+import 'lightgallery/css/lightgallery.css';
+import 'lightgallery/css/lg-zoom.css';
+import 'lightgallery/css/lg-thumbnail.css';
+
 
 type Props = {
   post: PostType;
@@ -26,12 +35,11 @@ export default function Post({ post, morePosts, preview }: Props) {
   useHightLight();
 
   useEffect(() => {
-    const lightbox = new PhotoSwipeLightbox({
-      gallery: "#my-gallery",
-      children: "a[title='flag']",
-      pswpModule: () => import("photoswipe"),
-    });
-    lightbox.init();
+    lightGallery(document.getElementById('my-gallery'), {
+      selector: '.lightgallary-item',
+      speed: 500,
+      plugins: [lgZoom, lgThumbnail]
+    })
   }, []);
 
   if (!router.isFallback && !post?.slug) {
