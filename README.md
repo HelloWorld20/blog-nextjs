@@ -1,3 +1,12 @@
+# todo
+
+* 主页、文章详情、归档、标签、关于页面。
+* 文章搜索功能
+* 相册
+* 评论、访问量
+* 文章图片接入PhotoSwipe点击放大√
+* 接入google analasys
+
 # A statically generated blog example using Next.js, Markdown, and TypeScript
 
 This is the existing [blog-starter](https://github.com/vercel/next.js/tree/canary/examples/blog-starter) plus TypeScript.

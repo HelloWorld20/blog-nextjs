@@ -38,3 +38,4 @@ next-env.d.ts
 /_posts/
 # 封面图片处理后资源
 /public/assets/imgs/_cover/*
+/public/assets/h/*

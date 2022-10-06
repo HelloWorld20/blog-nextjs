@@ -7,11 +7,11 @@ import Head from 'next/head'
 import Post from 'interfaces/post'
 
 type Props = {
-  allPosts: Post[]
+  posts: Post[]
 }
 
-export default function Index({ allPosts }: Props) {
-  const [heroPost, ...morePosts] = allPosts
+export default function Index({ posts }: Props) {
+  const [heroPost, ...morePosts] = posts
   return (
     <>
       <Layout>
@@ -39,7 +39,7 @@ export default function Index({ allPosts }: Props) {
 }
 
 export const getStaticProps = async () => {
-  const allPosts = getAllPosts([
+  const posts = getAllPosts([
     'title',
     'date',
     'slug',
@@ -49,6 +49,6 @@ export const getStaticProps = async () => {
   ])
 
   return {
-    props: { allPosts },
+    props: { posts },
   }
 }
