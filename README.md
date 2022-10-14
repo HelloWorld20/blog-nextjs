@@ -6,6 +6,8 @@
 * 评论、访问量
 * 文章图片接入PhotoSwipe点击放大√
 * 接入google analasys
+* markdown表格支持
+* 列表添加文章部分内容
 
 # A statically generated blog example using Next.js, Markdown, and TypeScript
 

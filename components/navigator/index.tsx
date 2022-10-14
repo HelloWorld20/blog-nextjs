@@ -37,7 +37,7 @@ export default function Navigator() {
         </div>
       </div>
       {navEdpended && (
-        <div className="w-screen h-screen bg-gray-50 bg-opacity-25">
+        <div className="relative w-screen h-screen bg-gray-50 bg-opacity-95 z-10">
           <div className="absolute top-10 right-10 z-20 text-xs">
             <div className="absolute right-10 bg-gray-50 p-1.5 rounded-sm cursor-pointer hover:bg-gray-100">
               <i
@@ -60,8 +60,8 @@ export default function Navigator() {
           <ul className="pt-36 flex justify-center text-lg text-gray-500 space-x-8">
             {label.map(({ name, url }) => (
               <li key={name}>
-                <Link href={url || '#'} onClick={() => dispatch(toggleNav(false))}>
-                  <a href={url || '#'} className="cursor-pointer hover:text-gray-800">
+                <Link href={url || '#'}>
+                  <a href={url || '#'} onClick={() => dispatch(toggleNav(false))} className="cursor-pointer hover:text-gray-800">
                     {name}
                   </a>
                 </Link>
