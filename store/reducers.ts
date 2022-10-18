@@ -1,5 +1,5 @@
-import { combineReducers } from 'redux'
-import * as types from './types'
+import { combineReducers } from "redux";
+import * as types from "./types";
 
 // COUNTER REDUCER
 // const counterReducer = (state = 0, { type }) => {
@@ -34,24 +34,25 @@ import * as types from './types'
 //   }
 // }
 
-
-
 const initialAppState: appModel = {
-  navExpended: false
-}
+  navExpended: false,
+  searchExpended: true,
+};
 
 const appReducer = (state = initialAppState, { type, payload }): appModel => {
   switch (type) {
     case types.TOGGLE_NAV:
-      return { ...state, navExpended: payload }
+      return { ...state, navExpended: payload };
+    case types.TOGGLE_SEARCH:
+      return { ...state, searchExpended: payload };
     default:
-      return state
+      return state;
   }
-}
+};
 
 // COMBINED REDUCERS
 const reducers = {
-  app: appReducer
-}
+  app: appReducer,
+};
 
-export default combineReducers(reducers)
+export default combineReducers(reducers);

@@ -1,18 +1,24 @@
 import { useDispatch, useSelector } from "react-redux";
-import { toggleNav } from "@/store/actions";
+import { toggleNav, toggleSearch } from "@/store/actions";
 import Pannel from "./pannel";
+import SearchPannel from "./search";
 
 export default function Navigator() {
   const dispatch = useDispatch();
 
-  const { navExpended } = useSelector<StoreState, appModel>(
+  const { navExpended, searchExpended } = useSelector<StoreState, appModel>(
     (state) => state.app
   );
 
   return (
     <>
       <div className="absolute top-10 right-10 z-10 text-xs">
-        <div className="absolute right-10 bg-gray-50 p-1.5 rounded-sm cursor-pointer hover:bg-gray-100">
+        <div
+          className="absolute right-10 bg-gray-50 p-1.5 rounded-sm cursor-pointer hover:bg-gray-100"
+          onClick={() => {
+            dispatch(toggleSearch(!searchExpended));
+          }}
+        >
           <i
             className="iconfont icon-search"
             style={{ lineHeight: "22px" }}
@@ -27,7 +33,8 @@ export default function Navigator() {
           <i className="iconfont icon-menu" style={{ lineHeight: "22px" }}></i>
         </div>
       </div>
-      {navExpended && <Pannel navExpended={navExpended} />}
+      {navExpended && <Pannel expended={navExpended} />}
+      {searchExpended && <SearchPannel />}
     </>
   );
 }

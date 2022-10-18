@@ -2,6 +2,8 @@ import * as types from './types'
 
 export const toggleNav = (payload: boolean) => ({ type: types.TOGGLE_NAV, payload })
 
+export const toggleSearch = (payload: boolean) => ({ type: types.TOGGLE_SEARCH, payload })
+
 // // INITIALIZES CLOCK ON SERVER
 // export const serverRenderClock = () => (dispatch) =>
 //   dispatch({

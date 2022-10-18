@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { toggleNav } from "@/store/actions";
 import Hitokoto from "../hitokoto";
 import Link from "next/link";
@@ -11,7 +11,7 @@ const label = [
   { name: "关于" },
 ];
 
-export default function Pannel({ navExpended }) {
+export default function Pannel({ expended }) {
   const dispatch = useDispatch();
   return (
     <div className="relative w-screen h-screen bg-gray-50 bg-opacity-95 z-10">
@@ -25,7 +25,7 @@ export default function Pannel({ navExpended }) {
         <div
           className="absolute right-0 bg-gray-50 p-1.5 rounded-sm cursor-pointer hover:bg-gray-100"
           onClick={() => {
-            dispatch(toggleNav(!navExpended));
+            dispatch(toggleNav(!expended));
           }}
         >
           <i className="iconfont icon-close" style={{ lineHeight: "22px" }}></i>

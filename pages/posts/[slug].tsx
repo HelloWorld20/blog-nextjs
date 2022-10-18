@@ -5,7 +5,7 @@ import PostBody from "@/components/post-body";
 // import Header from '@/components/header'
 import PostHeader from "@/components/post-header";
 import Layout from "@/components/layout";
-import { GALLERY_ITEM_CLASS } from '@/lib/constants'
+import { GALLERY_ITEM_CLASS } from "@/lib/constants";
 import { getPostBySlug, getAllPosts } from "@/lib/api";
 import PostTitle from "@/components/post-title";
 import Head from "next/head";
@@ -13,16 +13,15 @@ import markdownToHtml from "@/lib/markdownToHtml";
 import type PostType from "@/interfaces/post";
 import useHightLight from "@/hooks/use-hightlight";
 
-import LightGallery from 'lightgallery/react';
+import LightGallery from "lightgallery/react";
 
 // Plugins
-import lgThumbnail from 'lightgallery/plugins/thumbnail'
-import lgZoom from 'lightgallery/plugins/zoom'
+import lgThumbnail from "lightgallery/plugins/thumbnail";
+import lgZoom from "lightgallery/plugins/zoom";
 
-import 'lightgallery/css/lightgallery.css';
-import 'lightgallery/css/lg-zoom.css';
-import 'lightgallery/css/lg-thumbnail.css';
-
+import "lightgallery/css/lightgallery.css";
+import "lightgallery/css/lg-zoom.css";
+import "lightgallery/css/lg-thumbnail.css";
 
 type Props = {
   post: PostType;
@@ -39,33 +38,36 @@ export default function Post({ post, preview }: Props) {
   }
   return (
     <Layout preview={preview}>
-      {/* <div id="my-gallery"> */}
-      <LightGallery speed={500} plugins={[lgThumbnail, lgZoom]} selector={`.${GALLERY_ITEM_CLASS}`}>
-        <Container>
-          {/* <Header /> */}
-          {router.isFallback ? (
-            <PostTitle>Loading…</PostTitle>
-          ) : (
-            <>
-              <article className="mb-32">
-                <Head>
-                  <title>{post.title}</title>
-                  {/* <meta property="og:image" content={post.ogImage.url} /> */}
-                </Head>
-                <PostHeader
-                  title={post.title}
-                  coverImage={post.coverImage}
-                  date={post.date}
-                  author={post.author}
-                />
-                <PostBody content={post.content} />
-              </article>
-            </>
-          )}
-        </Container>
-      </LightGallery>
-
-      {/* </div> */}
+      <div data-pagefind-body>
+        <LightGallery
+          speed={500}
+          plugins={[lgThumbnail, lgZoom]}
+          selector={`.${GALLERY_ITEM_CLASS}`}
+        >
+          <Container>
+            {/* <Header /> */}
+            {router.isFallback ? (
+              <PostTitle>Loading…</PostTitle>
+            ) : (
+              <>
+                <article className="mb-32">
+                  <Head>
+                    <title>{post.title}</title>
+                    {/* <meta property="og:image" content={post.ogImage.url} /> */}
+                  </Head>
+                  <PostHeader
+                    title={post.title}
+                    coverImage={post.coverImage}
+                    date={post.date}
+                    author={post.author}
+                  />
+                  <PostBody content={post.content} />
+                </article>
+              </>
+            )}
+          </Container>
+        </LightGallery>
+      </div>
     </Layout>
   );
 }
