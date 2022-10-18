@@ -1,7 +1,7 @@
 interface appModel {
-  navEdpended: boolean;
+  navExpended: boolean;
 }
 
 interface StoreState {
-  app: appModel
+  app: appModel;
 }

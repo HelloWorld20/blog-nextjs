@@ -37,13 +37,13 @@ import * as types from './types'
 
 
 const initialAppState: appModel = {
-  navEdpended: false
+  navExpended: false
 }
 
 const appReducer = (state = initialAppState, { type, payload }): appModel => {
   switch (type) {
     case types.TOGGLE_NAV:
-      return { ...state, navEdpended: payload }
+      return { ...state, navExpended: payload }
     default:
       return state
   }
