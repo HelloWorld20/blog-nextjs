@@ -1,0 +1,8 @@
+
+#search .pagefind-ui {
+  padding: 5rem;
+}
+
+#search .pagefind-ui .pagefind-ui__result-thumb {
+  display: none;
+}

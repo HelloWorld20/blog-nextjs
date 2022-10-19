@@ -9,10 +9,12 @@ type Props = {
 }
 
 const Layout = ({ preview, children }: Props) => {
-  const { navExpended } = useSelector<StoreState, appModel>(state => state.app)
+  const { navExpended, searchExpended } = useSelector<StoreState, appModel>(state => state.app)
+
+  const expended = navExpended || searchExpended;
 
   return (
-    <div className={navExpended ? 'w-screen h-screen overflow-hidden' : ""}>
+    <div className={expended ? 'w-screen h-screen overflow-hidden' : ""}>
       <Meta />
       <div className="min-h-screen">
         {preview && <Alert />}

@@ -7,7 +7,9 @@
     "export": "next export",
     "typecheck": "tsc",
     "minify:image": "node ./scripts/sharp",
-    "indexed": "pagefind --source out"
+    "generate": "npm run build && npm run export && npm run indexed",
+    "indexed": "pagefind --source out",
+    "preview": "cd out && http-server"
   },
   "dependencies": {
     "classnames": "^2.3.1",

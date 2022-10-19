@@ -16,12 +16,6 @@ export default function Pannel({ expended }) {
   return (
     <div className="relative w-screen h-screen bg-gray-50 bg-opacity-95 z-10">
       <div className="absolute top-10 right-10 z-20 text-xs">
-        <div className="absolute right-10 bg-gray-50 p-1.5 rounded-sm cursor-pointer hover:bg-gray-100">
-          <i
-            className="iconfont icon-search"
-            style={{ lineHeight: "22px" }}
-          ></i>
-        </div>
         <div
           className="absolute right-0 bg-gray-50 p-1.5 rounded-sm cursor-pointer hover:bg-gray-100"
           onClick={() => {
