@@ -9,7 +9,8 @@
     "minify:image": "node ./scripts/sharp",
     "generate": "npm run build && npm run export && npm run indexed",
     "indexed": "pagefind --source out",
-    "preview": "cd out && http-server"
+    "preview": "cd out && http-server",
+    "fetch": "rimraf ./_posts && git clone git@github.com:HelloWorld20/article.git ./_posts"
   },
   "dependencies": {
     "classnames": "^2.3.1",

@@ -20,9 +20,9 @@ type Props = {
 
 const HeroPost = ({
   title,
-  coverImage,
+  // coverImage,
   date,
-  excerpt,
+  // excerpt,
   slug,
 }: Props) => {
   const rendomCover = getRandomCover()
@@ -41,15 +41,13 @@ const HeroPost = ({
           <div className='text-sm text-gray-200'>
             <DateFormatter dateString={date} />
           </div>
-          <h3 className='text-2xl pt-3'>
+          <h3 className='text-2xl md:text-2xl lg:text-3xl pt-3'>
             <Link as={`/posts/${slug}`} href="/posts/[slug]">
               <a className="hover:underline">{title}</a>
             </Link>
           </h3>
         </div>
       </div>
-
-
     </section>
   )
 }

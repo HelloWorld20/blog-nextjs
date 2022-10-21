@@ -2,7 +2,6 @@ import { useDispatch } from "react-redux";
 import { toggleSearch } from "@/store/actions";
 import Script from "next/script";
 
-import "pagefind/bin/out/_pagefind/pagefind-ui.css";
 import { useEffect } from "react";
 
 export default function Search() {
@@ -27,6 +26,7 @@ export default function Search() {
         <i className="iconfont icon-close" style={{ lineHeight: "22px" }}></i>
       </div>
       <div id="search" className="max-h-screen overflow-auto"></div>
+      <link href="./_pagefind/pagefind-ui.css" rel="stylesheet" type="text/css" />
       <Script
         src="./_pagefind/pagefind-ui.js"
         onLoad={() => {
