@@ -5,6 +5,7 @@
  */
 
 interface DataItem {
+  key: any;
   size: number;
   element: React.ReactElement;
 }
@@ -26,9 +27,9 @@ export enum SIZE {
 export default function Timeline(props: IProps) {
   return (
     <div className="border-l-4 border-gray-300 pl-6 m-5 py-2">
-      {props.data.map(({ element, size }) => {
+      {props.data.map(({ element, size, key }) => {
         return (
-          <div className="relative mb-6 last:mb-0">
+          <div key={key} className="relative mb-6 last:mb-0">
             <i
               className="absolute border-gray-300 border-4 rounded-full bg-white box-content"
               style={{

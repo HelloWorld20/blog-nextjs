@@ -1,13 +1,14 @@
 # todo
 
-* 主页、文章详情、归档、标签、关于页面。
-* 文章搜索功能
+* 主页√、文章详情√、归档√、标签√、关于页面。
+* 文章搜索功能√
 * 相册
 * 评论、访问量
 * 文章图片接入PhotoSwipe点击放大√
 * 接入google analasys
 * markdown表格支持
-* 列表添加文章部分内容
+
+![GitHub last commit](https://img.shields.io/github/last-commit/HelloWorld20/blog-nextjs)
 
 # A statically generated blog example using Next.js, Markdown, and TypeScript
 

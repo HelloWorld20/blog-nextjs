@@ -1,13 +1,10 @@
 // import Avatar from './avatar'
-import DateFormatter from './date-formatter'
-import CoverImage from './cover-image'
-import Link from 'next/link'
+import { useRandomCover } from '@/helpers/cover-images/cover'
 import type Author from '@/interfaces/author'
+import Link from 'next/link'
+import DateFormatter from './date-formatter'
 import Navigator from './navigator'
-import Image from 'next/image'
-import getRandomCover from '@/helpers/cover-images/cover'
 
-import cover from '../public/assets/imgs/_cover/2016-03-26_205142-01.jpeg'
 
 type Props = {
   title: string
@@ -25,12 +22,13 @@ const HeroPost = ({
   // excerpt,
   slug,
 }: Props) => {
-  const rendomCover = getRandomCover()
+  // const rendomCover = getRandomCover()
+  const randomCover = useRandomCover();
   return (
     <section>
       <Navigator />
       <div className="mb-8 md:mb-16 w-screen h-screen max-w-full overflow-hidden z-0">
-        <img src={rendomCover.default.src} alt="" className='absolute left-0 top-0 object-cover w-full h-full' />
+        <img src={randomCover.default.src} alt="" className='absolute left-0 top-0 object-cover w-full h-full' />
         <div className='absolute left-0 top-0 w-full h-full overflow-hidden'>
           <svg viewBox="0 0 2880 1620" height="100%" preserveAspectRatio="xMaxYMax slice">
             <polygon opacity="0.7" points="2000,1620 0,1620 0,0 600,0 "></polygon>

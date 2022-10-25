@@ -1,8 +1,8 @@
 import cn from 'classnames'
-import Link from 'next/link'
 import Image from 'next/image'
+import Link from 'next/link'
 
-import getRandomCover from '@/helpers/cover-images/cover'
+import { useRandomCover } from '@/helpers/cover-images/cover'
 
 type Props = {
   title: string
@@ -11,7 +11,7 @@ type Props = {
 }
 
 const CoverImage = ({ title, src, slug }: Props) => {
-  const coverImage = getRandomCover();
+  const coverImage = useRandomCover();
   const image = (
     <Image
       src={coverImage}
