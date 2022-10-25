@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "classnames": "^2.3.1",
-    "dayjs": "^1.11.5",
+    "dayjs": "^1.11.6",
     "easy-typer-js": "^2.1.0",
     "gray-matter": "^4.0.3",
     "highlight.js": "^11.6.0",
