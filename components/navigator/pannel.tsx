@@ -1,7 +1,7 @@
-import { useDispatch } from "react-redux";
 import { toggleNav } from "@/store/actions";
-import Hitokoto from "../hitokoto";
 import Link from "next/link";
+import { useDispatch } from "react-redux";
+import Hitokoto from "../hitokoto";
 
 const label = [
   { name: "首页" },

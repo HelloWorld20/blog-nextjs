@@ -1,5 +1,5 @@
-import { useDispatch, useSelector } from "react-redux";
 import { toggleNav, toggleSearch } from "@/store/actions";
+import { useDispatch, useSelector } from "react-redux";
 import Pannel from "./pannel";
 import SearchPannel from "./search";
 

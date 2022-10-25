@@ -1,6 +1,6 @@
 import { getAllPosts } from "@/lib/api";
-import { useMemo } from "react";
 import Link from "next/link";
+import { useMemo } from "react";
 
 const MAX_SIZE = 32;
 const MIN_SIZE = 16;

@@ -1,10 +1,10 @@
-import Head from "next/head";
-import { getPostByTag, getAllTags } from "@/lib/api";
 import Container from "@/components/container";
-import MoreStories from "@/components/more-stories";
 import HeroPost from "@/components/hero-post";
 import Layout from "@/components/layout";
+import MoreStories from "@/components/more-stories";
+import { getAllTags, getPostByTag } from "@/lib/api";
 import Post from "interfaces/post";
+import Head from "next/head";
 
 type Props = {
   posts: Post[];

@@ -1,17 +1,17 @@
-import { useRouter } from "next/router";
-import ErrorPage from "next/error";
 import Container from "@/components/container";
 import PostBody from "@/components/post-body";
+import ErrorPage from "next/error";
+import { useRouter } from "next/router";
 // import Header from '@/components/header'
-import PostHeader from "@/components/post-header";
 import Layout from "@/components/layout";
-import { GALLERY_ITEM_CLASS } from "@/lib/constants";
-import { getPostBySlug, getAllPosts } from "@/lib/api";
+import PostHeader from "@/components/post-header";
 import PostTitle from "@/components/post-title";
-import Head from "next/head";
-import markdownToHtml from "@/lib/markdownToHtml";
-import type PostType from "@/interfaces/post";
 import useHightLight from "@/hooks/use-hightlight";
+import type PostType from "@/interfaces/post";
+import { getAllPosts, getPostBySlug } from "@/lib/api";
+import { GALLERY_ITEM_CLASS } from "@/lib/constants";
+import markdownToHtml from "@/lib/markdownToHtml";
+import Head from "next/head";
 
 import LightGallery from "lightgallery/react";
 
@@ -19,9 +19,9 @@ import LightGallery from "lightgallery/react";
 import lgThumbnail from "lightgallery/plugins/thumbnail";
 import lgZoom from "lightgallery/plugins/zoom";
 
-import "lightgallery/css/lightgallery.css";
-import "lightgallery/css/lg-zoom.css";
 import "lightgallery/css/lg-thumbnail.css";
+import "lightgallery/css/lg-zoom.css";
+import "lightgallery/css/lightgallery.css";
 
 type Props = {
   post: PostType;

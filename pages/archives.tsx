@@ -1,8 +1,14 @@
+/**
+ * 归档页面
+ * @author jianghong.wei
+ * @since 2022-10-25 15:15:50
+ */
+
 import Timeline, { SIZE } from '@/components/timeline';
 import { getAllPosts } from '@/lib/api';
-import { useMemo } from 'react';
 import dayjs from 'dayjs';
-import Link from 'next/link'
+import Link from 'next/link';
+import { useMemo } from 'react';
 
 function getItemTitle(num: number) {
   return { size: SIZE.LG, element: <h2 className="text-3xl">归档: {num}篇</h2> };
@@ -65,7 +71,6 @@ export default function Archives({ posts }) {
     result.unshift(getItemTitle(result.length));
 
     return result;
-
   }, [postsDivideByYear]);
 
   return <Timeline data={timelineData} />;

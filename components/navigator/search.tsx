@@ -1,6 +1,6 @@
-import { useDispatch } from "react-redux";
 import { toggleSearch } from "@/store/actions";
 import Script from "next/script";
+import { useDispatch } from "react-redux";
 
 import { useEffect } from "react";
 
