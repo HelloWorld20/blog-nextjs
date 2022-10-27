@@ -1,14 +1,18 @@
-import { AppProps } from 'next/app'
-import { Provider } from 'react-redux'
-import { useStore } from '../store/store'
-import '../styles/index.css'
-import '../styles/search.css'
+import Analytics from '@/components/google-analytisc';
+import { AppProps } from 'next/app';
+import { Provider } from 'react-redux';
+import { useStore } from '../store/store';
+import '../styles/index.css';
+import '../styles/search.css';
 
 export default function MyApp({ Component, pageProps }: AppProps<any>) {
-  const store = useStore(pageProps.initialReduxState)
+  const store = useStore(pageProps.initialReduxState);
   return (
-    <Provider store={store}>
-      <Component {...pageProps} />
-    </Provider>
-  )
+    <>
+      <Analytics />
+      <Provider store={store}>
+        <Component {...pageProps} />
+      </Provider>
+    </>
+  );
 }

@@ -5,7 +5,7 @@
 * 相册
 * 评论、访问量
 * 文章图片接入PhotoSwipe点击放大√
-* 接入google analasys
+* 接入google analasys√
 * markdown表格支持
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/HelloWorld20/blog-nextjs)
