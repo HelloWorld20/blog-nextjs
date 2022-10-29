@@ -7,7 +7,7 @@ const label = [
   { name: "首页" },
   { name: "标签", url: "/tags" },
   { name: "归档", url: "/archives" },
-  { name: "收藏" },
+  { name: "收藏", url: "/collect" },
   { name: "关于" },
 ];
 

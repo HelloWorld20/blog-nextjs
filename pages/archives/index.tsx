@@ -57,18 +57,16 @@ export default function Archives({ timeline }) {
   }, [timeline]);
 
   return (
-    <>
-      <Layout>
-        <Head>
-          <title>归档</title>
-        </Head>
-        <Container>
-          <section className="flex justify-center">
-            <Timeline data={timelineElement} />
-          </section>
-        </Container>
-      </Layout>
-    </>
+    <Layout>
+      <Head>
+        <title>归档</title>
+      </Head>
+      <Container>
+        <section className="flex justify-center">
+          <Timeline data={timelineElement} />
+        </section>
+      </Container>
+    </Layout>
   );
 }
 

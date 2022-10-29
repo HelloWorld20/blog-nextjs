@@ -2,3 +2,18 @@
   border: 1px solid #ddd;
   padding: 6px 13px;
 }
+
+h1 {
+  font-size: 39px;
+}
+
+.post-body a {
+  background: transparent;
+  color: #1980e6;
+  text-decoration: none;
+}
+
+.post-body a:hover {
+  text-decoration: underline;
+  color: #518dca;
+}
