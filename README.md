@@ -6,7 +6,9 @@
 * 评论、访问量
 * 文章图片接入PhotoSwipe点击放大√
 * 接入google analasys√
-* markdown表格支持
+* markdown表格支持√
+* 所有配置抽离为配置文件
+* 局部样式（less）
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/HelloWorld20/blog-nextjs)
 
