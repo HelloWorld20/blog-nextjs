@@ -9,8 +9,13 @@
 * markdown表格支持√
 * 所有配置抽离为配置文件
 * 图片路径转换
+* 文章目录
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/HelloWorld20/blog-nextjs)
+
+![GitHub top language](https://img.shields.io/github/languages/top/HelloWorld20/blog-nextjs)
+
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/HelloWorld20/blog-nextjs)
 
 # 开发
 
@@ -50,6 +55,8 @@
 
 # 添加搜索索引
 
+```shell
   npm run indexed
+```
 
 pagefind插件基于已经打包生成的静态文件建立搜索索引。所以此命令必须是在执行完`next build && next export`之后执行。
